@@ -94,6 +94,18 @@ public class List {
         return null;
     }
     
+    public int length()
+    {
+        int counter = 0;
+        Node temp = head;
+        while (temp!=null)
+        {
+            counter++;
+            temp=temp.next;            
+        }
+        return counter;
+    }
+    
     public Node binarySearch(int id) {
         int lowerBound = 0, upperBound = size - 1, index = -1, middlePoint;
         
@@ -130,6 +142,43 @@ public class List {
                     return binarySearchRecursive(id, lB, middlePoint - 1);
                 else
                     return binarySearchRecursive(id, middlePoint + 1, uB);
+    }
+    
+    public List QuickSort (List lista)
+    {
+        
+        if (lista.length() <= 1) 
+        {
+            return lista;
+        }
+        else
+        {
+        List less_sublist = new List();
+        List greater_sublist = new List();
+        Node pivot = lista.head;
+        Node temp = lista.head.next;
+            while (temp != null) 
+            {
+                if (temp.id < pivot.id)
+                {
+                    less_sublist.insertAtEnd(temp.clone());
+                }
+                else
+                {
+                    greater_sublist.insertAtEnd(temp.clone());
+                }
+                temp = temp.next; 
+            }
+            less_sublist = QuickSort(less_sublist);
+            greater_sublist =  QuickSort(greater_sublist);
+            pivot.next = greater_sublist.head;
+            less_sublist.insertAtEnd(pivot);
+            
+            return less_sublist;
+        }
+        
+        
+        
     }
 
 }

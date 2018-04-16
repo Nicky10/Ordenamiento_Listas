@@ -130,31 +130,44 @@ public class Sorts {
     }
     
     public static void main(String[] args) throws IOException {
-        Sorts sorts = new Sorts();
-        int[] a = sorts.bigArray(100000);
-        int[] b = a.clone();
-        int[] c = a.clone();
-        int[] d = a.clone();
-        sorts.printArray(a);
-        long ta = System.currentTimeMillis();
-        sorts.bubbleSort(a);
-        System.out.println(System.currentTimeMillis()-ta);
-        sorts.printArray(a);
-        sorts.printArray(b);
-        long tb = System.currentTimeMillis();
-        sorts.insertionSort(b);
-        System.out.println(System.currentTimeMillis()-tb);
-        sorts.printArray(b);
-        sorts.printArray(c);
-        long tc = System.currentTimeMillis();
-        c = sorts.mergeSort(c);
-        System.out.println(System.currentTimeMillis()-tc);
-        sorts.printArray(c);
-        sorts.printArray(d);
-        long td = System.currentTimeMillis();
-        sorts.countingSort(d);
-        System.out.println(System.currentTimeMillis()-td);
-        sorts.printArray(d);
+//        Sorts sorts = new Sorts();
+//        int[] a = sorts.bigArray(100000);
+//        int[] b = a.clone();
+//        int[] c = a.clone();
+//        int[] d = a.clone();
+//        sorts.printArray(a);
+//        long ta = System.currentTimeMillis();
+//        sorts.bubbleSort(a);
+//        System.out.println(System.currentTimeMillis()-ta);
+//        sorts.printArray(a);
+//        sorts.printArray(b);
+//        long tb = System.currentTimeMillis();
+//        sorts.insertionSort(b);
+//        System.out.println(System.currentTimeMillis()-tb);
+//        sorts.printArray(b);
+//        sorts.printArray(c);
+//        long tc = System.currentTimeMillis();
+//        c = sorts.mergeSort(c);
+//        System.out.println(System.currentTimeMillis()-tc);
+//        sorts.printArray(c);
+//        sorts.printArray(d);
+//        long td = System.currentTimeMillis();
+//        sorts.countingSort(d);
+//        System.out.println(System.currentTimeMillis()-td);
+//        sorts.printArray(d);
+          List lista = new List();
+          lista.insertAtBegin(new Node(1,""));
+          lista.insertAtBegin(new Node(23,""));
+          lista.insertAtBegin(new Node(32,""));
+          lista.insertAtBegin(new Node(24,""));
+          lista.insertAtBegin(new Node(17,""));
+          lista.insertAtBegin(new Node(91,""));
+          
+          lista.printList();
+          
+          lista = lista.QuickSort(lista);
+          lista.printList();
+          
     }
     
 }
